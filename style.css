@@ -1,0 +1,239 @@
+/* Reset default margin & padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+nav {
+    background: linear-gradient(135deg, #fcfcfc, #b7b7b8); /* gradasi elegan */
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* logo kiri, menu kanan */
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2); /* efek bayangan */
+}
+
+/* Logo / Nama */
+nav .logo {
+    color: #f39c12;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+/* Hover dengan underline animasi */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #f39c12;
+    transition: width 0.3s ease;
+    -webkit-transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    background: #f39c12;
+}
+
+
+/* Section styling */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#beranda {
+    background: linear-gradient(135deg, #f39c12, #d35400);
+    color: rgb(0, 0, 0);
+}
+
+#tentang {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    text-align: center; /* Semua konten rata tengah */
+
+/* --- Container Flex untuk Pendidikan & Data Pribadi --- */
+.info-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap; /* biar tetap rapi di layar kecil */
+    text-align: left; /* ✅ tulisan jadi rata kiri */
+}
+
+/* --- Box Pendidikan & Data Pribadi --- */
+.pendidikan, .data-pribadi {
+    flex: 1;
+    max-width: 500px;
+    background: linear-gradient(135deg, #fcfcfc, #b7b7b8); /* gradasi elegan */;
+    padding: 20px 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    
+}
+.pendidikan:hover, .data-pribadi:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.pendidikan h3, .data-pribadi h3 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+    text-align: center;
+
+}
+.pendidikan ul, .data-pribadi ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.pendidikan ul li, .data-pribadi ul li {
+    margin: 8px 0;
+    font-size: 16px;
+    color: #000000;
+    padding-left: 20px;
+    position: relative;
+}
+.pendidikan ul li::before {
+    content: "📘";
+    position: absolute;
+    left: 0;
+}
+.data-pribadi ul li::before {
+    content: "👤";
+    position: absolute;
+    left: 0;
+}
+}
+
+#kontak {
+     background: linear-gradient(135deg, #f39c12, #d35400);
+}
+
+/* Galeri Foto */
+#galeri {
+    background-color: #ecf0f1;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#galeri h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #2c3e50;
+}
+
+/* Container foto horizontal */
+.foto-container {
+    display: flex;
+    justify-content: center;   /* rata tengah */
+    gap: 15px;                 /* jarak antar foto */
+    flex-wrap: wrap;           /* biar responsif */
+    margin-bottom: 20px;
+}
+
+/* Bungkus foto biar ada border gradient */
+.foto-container img {
+    width: 120px;              /* ukuran kecil */
+    height: 120px;             /* bikin konsisten */
+    object-fit: cover;         /* crop biar proporsional */
+    border-radius: 50%;        /* bikin bulat */
+    padding: 3px; /* tebal border */
+    background: linear-gradient(135deg, #f39c12, #d35400); /* gradient border */
+    transition: transform 0.3s;
+}
+
+/* Efek hover zoom */
+.foto-container img:hover {
+    transform: scale(1.08);
+}
+
+/* Judul dan teks */
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Kontak & Sosial Media */
+#kontak ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#kontak ul li {
+    margin: 10px 15px;
+}
+
+#kontak ul li a {
+    text-decoration: none;
+    background: linear-gradient(135deg, #fcfcfc, #b7b7b8); /* gradasi elegan */
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+#kontak ul li a:hover {
+    background-color: #ffffff;
+}
+
+footer {
+    background: linear-gradient(135deg, #fcfcfc, #b7b7b8); /* gradasi elegan */
+    color: #000000;
+    text-align: center;     /* Posisi teks tengah */
+    padding: 15px 0;
+    font-size: 14px;
+    width: 100%;            /* Agar melebar penuh */
+}
